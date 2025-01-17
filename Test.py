@@ -17,6 +17,14 @@ df = pd.DataFrame({
 # Create a bar chart
 fig = px.bar(df, x="Fruit", y="Amount", color="City", barmode="group")
 
+
+df = px.data.gapminder()
+fig = px.scatter(df, x="gdpPercap", y="lifeExp", animation_frame="year", animation_group="country",
+           size="pop", color="continent", hover_name="country", facet_col="continent",
+           log_x=True, size_max=45, range_x=[100,100000], range_y=[25,90])
+
+
+
 # Define the layout of the app
 app.layout = html.Div(children=[
     html.H1(children='Hello Dash'),
