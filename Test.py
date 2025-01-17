@@ -8,6 +8,7 @@ app = dash.Dash(__name__)
 
 # Sample data
 df = px.data.gapminder()
+server=app.server
 
 # App layout
 app.layout = html.Div([
