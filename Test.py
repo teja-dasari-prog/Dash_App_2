@@ -16,6 +16,11 @@ app.layout = html.Div([
     dcc.Graph(id="scatter-plot"),
 ])
 
+@app.callback(
+    Output("scatter-plot", "figure"),
+    Input("scatter-plot", "clickData")
+)
+
 def update_scatter_plot(clickData):
     fig = px.scatter(loaded_data, x='MET-farm', y='farm',title='Scatter Plot Example')
     return fig
