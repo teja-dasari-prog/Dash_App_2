@@ -18,7 +18,7 @@ app.layout = html.Div([
     dcc.Dropdown(
         id="species-dropdown",
         options=[{"label": i, "value": i} for i in loaded_data['Month'].unique()],
-        value=df['Month'].unique()[0]
+        value=loaded_data['Month'].unique()[0]
     )
 ])
 
