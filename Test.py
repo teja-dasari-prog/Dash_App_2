@@ -16,7 +16,7 @@ app.layout = html.Div([
     dcc.Graph(id="scatter-plot"),
     html.P("Select Month:"),
     dcc.Dropdown(
-        id="species-dropdown",
+        id="Month-dropdown",
         options=[{"label": i, "value": i} for i in loaded_data['Month'].unique()],
         value=loaded_data['Month'].unique()[0]
     )
@@ -24,7 +24,7 @@ app.layout = html.Div([
 
 @app.callback(
     Output("scatter-plot", "figure"),
-    Input("scatter-plot", "clickData")
+    Input("Month-dropdown", "value")
 )
 
 def update_scatter_plot(clickData):
