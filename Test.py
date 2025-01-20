@@ -12,8 +12,14 @@ server=app.server
 loaded_data = pd.read_csv('loaded_data.csv')
 
 app.layout = html.Div([
-    html.H4("Interactive scatter plot with my data"),
+    html.H4("Interactive scatter plot with solar farm data"),
     dcc.Graph(id="scatter-plot"),
+    html.P("Select Month:"),
+    dcc.Dropdown(
+        id="species-dropdown",
+        options=[{"label": i, "value": i} for i in df['Month'].unique()],
+        value=df['Month'].unique()[0]
+    )
 ])
 
 @app.callback(
