@@ -13,7 +13,7 @@ loaded_data = pd.read_csv('loaded_data.csv')
 
 app.layout = html.Div([
     html.H4("Interactive scatter plot with solar farm data"),
-    dcc.Graph(id="scatter-plot"),
+    dcc.Graph(id="Sherco Solar Production in MWh - hourly"),
     html.P("Select Month:"),
     dcc.Dropdown(
         id="Month-dropdown",
