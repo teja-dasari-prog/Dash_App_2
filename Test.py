@@ -17,7 +17,7 @@ app.layout = html.Div([
     html.P("Select Month:"),
     dcc.Dropdown(
         id="species-dropdown",
-        options=[{"label": i, "value": i} for i in df['Month'].unique()],
+        options=[{"label": i, "value": i} for i in loaded_data['Month'].unique()],
         value=df['Month'].unique()[0]
     )
 ])
