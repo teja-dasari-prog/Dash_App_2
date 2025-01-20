@@ -28,7 +28,8 @@ app.layout = html.Div([
 )
 
 def update_scatter_plot(clickData):
-    fig = px.scatter(loaded_data, x='MET-farm', y='farm',title='Scatter Plot Example')
+    filtered_loaded_data = loaded_data[loaded_data['Month'] == clickData]
+    fig = px.scatter(filtered_loaded_data, x='MET-farm', y='farm',title='Scatter Plot Example')
     return fig
 
 if __name__ == "__main__":
