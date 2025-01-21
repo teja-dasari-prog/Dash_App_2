@@ -9,7 +9,7 @@ app = dash.Dash(__name__)
 server=app.server
 
 # Load my data
-loaded_data = pd.read_csv('loaded_data.csv')
+loaded_data = pd.read_csv('loaded_data_v0.csv')
 
 app.layout = html.Div([
     html.H4("Interactive scatter plot with solar farm data"),
